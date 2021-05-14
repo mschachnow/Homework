@@ -12,6 +12,7 @@ print(f'Name:  {name} Address:  {address} Names:  {names}')
 print(name[::3])
 
 # 4.
+
 print(names[-2][1:-1])
 # 5.
 for i in range(1, 11):
@@ -39,5 +40,6 @@ while guess != number:
            
     except ValueError as e:
         print('Non Valid')
-        
+test= 1
+print(test)
 
