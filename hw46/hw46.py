@@ -3,15 +3,18 @@ class die():
     roll_die = 0
     def __init__(self, sides) -> int:
         self._sides = sides
+        self._value = 1
+
+    def value(self):
+        return self._value
 
     def __str__(self):
-        return f'sides: {self._sides}'
+        return f'sides: {self._sides} value: {self._value}'
     
     
     def roll_die(self):
-        num = random.randint(1, self._sides) 
-        print(num)
-        return num
+        self._value = random.randint(1,self._sides )
+        return self._value
     
     def print(self):
         print (f'sides: {self._sides} ')
@@ -24,25 +27,15 @@ class die():
             raise ValueError('Sides cannot be none')
         self._sides 
 
-    #def roll_die(self):
-    #self.num *= die.roll_die
-
-'''@classmethod
-def set_roll_die(cls, roll_die):
-    cls.roll_die=roll_die'''
-
+class Six_Sided_Die(die):
+    def __init__(self):
+        super().__init__(6)
     
-'''def regular_die(self):
-    num = 6
-for regular_die in die:
-    die.roll_die
-    print (die)'''
-
 # print(die(3))
 die1 = die(6)
 print(die1)
 die1.roll_die()
-die1.print
+print(die1)
 #die1.regular_die()
 
 #3.
