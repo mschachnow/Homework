@@ -1,0 +1,19 @@
+html{
+    background-color: rgb(103, 138, 133);
+    text-align: center;
+}
+body{
+    color: burlywood;
+    
+}
+header h1{
+    text-align: center;
+}
+header{
+    font-style: oblique;
+    font-size: 2em;
+    font-weight: 200;
+    color: cadetblue;
+    border: 4px ridge rgb(118, 141, 170);
+    border-radius: 7px;
+}
