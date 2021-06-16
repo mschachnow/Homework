@@ -1,0 +1,106 @@
+html{
+    background-color: rgb(91, 146, 138);
+    text-align: center;
+    padding-bottom: lem;
+   
+    
+}
+body{
+    margin-top: 30em;
+    /*background-color: rgb(27, 194, 169);*/
+    color: burlywood;
+    margin: auto;
+    padding: 1em 2em 3em 4em; /* trbl*/
+    /*max-width: 800px;*/
+    width: 80%;
+
+    
+    
+}
+h1 {
+    margin-top: 2em;
+}
+body h2 {
+    text-shadow: 2px 2px 2px rgb(206, 187, 151);
+}
+
+header h1{
+    text-align: center;
+    background-color: wheat;
+    text-shadow:2px 2px 2px rgb(245, 245, 245);
+}
+header{
+    background-color: rgb(57, 122, 122);
+    font-style: oblique;
+    font-size: 2em;
+    font-weight: 200;
+    color: rgb(39, 70, 71);
+    /*font-stroke: black;*/
+    font-stretch:semi-expanded ;
+    border: 4px ridge rgb(118, 141, 170);
+    border-radius: 7px;
+    padding: auto;
+
+}
+#copyright{
+    text-align: right;
+    color:black;
+}
+.menuItem img {
+    border-radius: 6px;
+    transform: skew(3deg, 1deg);
+    float:left;
+    margin: 2em;
+}
+.menuItem {
+    font-family: 'Pacifico', cursive;
+    font-weight: bolder;
+    font-style: italic;
+    text-decoration: chocolate;
+    /*height: 300;*/
+    overflow: auto;
+    border: 2px ridge black;
+    border: 2px 2px 2px 2px black;
+    
+}
+#mainMenuLink {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    letter-spacing: .5px;
+    text-transform:uppercase;
+}
+nav a:link {
+    color:brown;
+}
+nav a:visited {
+    color:rgb(3, 54, 56);
+}
+a:focus {
+    color:rgb(161, 240, 201);
+}
+nav a:hover {
+    color:rgb(99, 170, 135);
+}
+nav a:active {
+    color:rgb(39, 70, 71);
+}
+ul {
+    list-style: none;
+    
+    
+    
+}
+header ul{
+    
+    padding-left: 0;
+}
+header ul li {
+    display: inline;
+}
