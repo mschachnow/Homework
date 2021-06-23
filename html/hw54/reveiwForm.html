@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background-color: whitesmoke;
+            width: 80%;
+            margin: auto;
+        }
+        
+        input, textarea {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 1em;
+        }
+        textarea {
+            height: 4em;
+        }
+        h2 {
+            color: black;
+            font-size: 2em;
+        }
+        h3 {
+            font-style: italic;
+            color: rgb(66, 64, 64);
+        }
+        .ThankYou {
+            font-size: 1.5em;
+            color: rgb(80, 77, 77);
+        }
+        
+    </style>
+</head>
+<body>
+    <h2>Costumer Reveiw:</h2>
+    <h3>~please give us your feedback so we can service you better.</h3>
+    <form action="feedBack.php" method="POST"></form>
+
+    <label for="FirstName">First Name:</label>
+    <input type="firstName" placeholder="Enter First Name">
+
+    <label for="lastName">Last Name:</label>
+    <input id="lastName" name="lastName" placeholder="Enter Last Name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" placeholder="Enter email address here">
+
+    <label for="DateVisited">Date visited:</label>
+    <input type="date" name="DateVisited" min="2000-01-01" required>
+
+    <label for="rating">Rating:</label>
+    <input type="range" name="rating" id="rating" min="1" max="10" value="1">
+
+    <label for="comments">Comments:</label>
+    <textarea name="comments" id="comments" placeholder="Enter comment here"></textarea>
+
+    <input type="submit">
+    <h3 class="ThankYou">Thank you for your feedback!</h3>
+
+
+
+
+</body>
+</html>

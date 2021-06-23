@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        table, td, th{
+            border: 1px solid black;
+        }
+        tr:hover {
+            background-color: cadetblue;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: bisque;
+        } 
+        thead {
+            text-emphasis: bold;
+            font-size: 1.2em;
+            color: black;
+        }
+        tfoot {
+            color: rgb(61, 56, 56);
+            font-style: italic;
+        }
+        caption {
+            font-size: 3em;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <h4>to Return to main Menu<a href="index.html">click here</a></h4>
+    <table>
+        <caption>Soups:</caption>
+        <thead>
+            <tr>
+                <th>soup</th>
+                <th>price</th>
+                <th>includes</th>
+                <th>days available</th>
+                <th>allergy information</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Root vegetable</td>
+                <td>4.50</td>
+                <td>bread croutons</td>
+                <td>Monday</td>
+                <td>includes flour</td>
+            </tr>
+            <tr>
+                <td>Potato Leak</td>
+                <td>5.20</td>
+                <td></td>
+                <td>Wednesday, Thursday</td>
+                <td>includes meat</td>
+            </tr>
+            <tr>
+                <td>Celery</td>
+                <td>4.30</td>
+                <td>pita bread</td>
+                <td>Monday, Tuesday</td>
+                <td>includes soy</td>
+            </tr>
+            <tr>
+                <td>Chicken soup</td>
+                <td>4.90</td>
+                <td>croutons</td>
+                <td>Thursday</td>
+                <td>includes chicken</td>
+            </tr>
+            <tr>
+                <td>Vegetable</td>
+                <td>5.10</td>
+                <td>chalmain noodles</td>
+                <td>Tuesday</td>
+                <td></td>
+            </tr>
+            <tfoot>
+                <tr>
+                    <td>ask about our other options</td>
+                    <td>please note pricing are subject to change</td>
+                    <td>add-ins are available</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </tbody>
+    </table>
+</body>
+</html>
