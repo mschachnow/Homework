@@ -1,0 +1,223 @@
+html {
+    background-color: white;
+    font-family: 'helvetica', 'arial', 'sans-serif';
+}
+body {
+    margin: auto;
+    width: 90%;
+    margin-bottom: 4em;
+    
+}
+nav a:link {
+    color: white;
+    text-decoration: none;
+}
+nav a:visited {
+    color: white;
+}
+nav a:active {
+    color: white;
+}
+nav a:hover {
+    color: red;
+    text-decoration: underline;
+}
+ul {
+    list-style: none;
+    display: inline;
+}
+header, footer{ 
+    background-color: black;
+    color: white;
+    position: fixed;
+    width: 100%; 
+    text-align: left;
+    left: 0;
+    right: 0;
+    padding: 1em;
+   
+}
+footer {
+    bottom: 0;
+}
+header {
+    top: 0;
+}
+.header {
+    text-align: center;
+    margin-top: 4em;
+    padding: 1em;
+    background-color: gray;
+    border-radius: 8px;
+}
+.header h1 {
+   font-variant-caps: titling-caps;
+}
+h2[pcs] {
+    font-style: italic;
+}
+
+h3 {
+    font-style: bold;
+}
+.pics {
+    display: inline-block;
+    /*box-sizing: border-box;*/
+    width: 15%;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1rem black;
+   
+}
+.TheGrid {
+    /*display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+    grid-auto-columns: 200px;
+    gap: 2em;*/
+}
+
+ @media screen and (min-width: 1000px){
+     
+  
+.TheGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 550px);
+    padding-left: 0;
+    border-left: black 1px;
+    align-content: center;
+    gap: 2rem black; 
+    justify-content:space-between;
+    /*box-sizing: border-box;*/
+    width: 15%;
+    /*margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;*/
+}
+}
+
+    
+@media screen and (max-width: 1000px) {
+    
+
+.TheGrid {
+    display: grid;
+    align-content: center;
+    text-align: center;
+    text-align: justify;
+}   
+}
+img {
+    align-content: center;
+    align-self: center;
+}
+.gray{
+    border-radius: 8px;
+    margin-top: 2em;
+    text-align: center;
+    background-color: gray;
+    padding: 1em;
+    margin-bottom: 0;
+}
+.mid {
+    /*padding-left: 1em;
+    padding-right: 1em;*/
+    border:purple 1px left right;
+    
+}
+
+label, input, button {
+    display: inline-block;
+    width: auto;
+}
+@media screen and (max-width: 1000px) {
+   input, button {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    align-self: center;
+  }
+}
+
+input {
+    border-radius: 5px;
+    box-shadow: 1px 2px 2px 1px black;
+    
+}
+ul h3 {
+    text-align: center;
+}
+th, td {
+    border: 1px solid black ;
+    margin: none;
+    
+}
+tr:hover {
+    background-color: lightskyblue !important;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgb(198, 204, 212);
+}
+
+
+thead {
+    text-emphasis: bold;
+    font-weight: bold;
+}
+tfoot tr {
+   font-weight: bold;
+    column-span: "5";
+    position:static;
+}
+.tot {
+    column-span: all;
+    
+}
+caption {
+   font-weight: bold;
+    
+}
+table {
+    align-content: center;
+    text-align: center;
+    border-collapse: collapse;
+    width: 65%;
+    align-self:center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: block;
+    overflow-x: scroll-bar;
+}
+.search-table-outter {
+    overflow-x: scroll;
+}
+th, td {
+    min-width: 180px;
+}
+td {
+    text-align: right;
+}
+
+div {
+    padding-top: 3em;
+}
+
+.lab   {
+    padding-top: 0;
+}
+#new_color td+td+td+td+td+td {
+    color: red;
+    
+}
+#new_color {
+    overflow-x: scroll;
+}
+
