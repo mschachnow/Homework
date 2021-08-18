@@ -28,12 +28,15 @@ const interestCalc = (function() {
 
     function setRate(rate) {
         interestRate = rate;
+        return this;
     }
 
     function setYears(years) {
         numOfYears = years;
+        return this;
     }
     function calculate(principal){
+         
         return principal*(interestRate/100)*numOfYears;
     }
     
@@ -44,6 +47,7 @@ const interestCalc = (function() {
     }
 
 }());
+
 
 interestCalc.setRate(3);
 interestCalc.setYears(5);
