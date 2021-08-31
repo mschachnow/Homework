@@ -25,6 +25,4 @@ let i= 0;
             startButton.innerText = 'Start';
         }
     });
-    
-    
 }());
