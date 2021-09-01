@@ -1,9 +1,15 @@
 (function () {
     'use strict';
-
     const num = [2, 3, 5, 6, 8, 9];
-    const newArray = num.map((num) => num * 10);
+    function myMap(num, myMapFunction) {
+        const newArray = [];
+        for(let i=0; i<num.length; i++){
+            const newLoop = myMapFunction(num[i], i, num);
+            newArray.push(newLoop); 
+        }
+        return newArray;
+    } 
 
-    console.log(num);
-    console.log(newArray);
+    const newNumArr = myMap(num, num => num * 2);
+    console.log(newNumArr);
 }());
