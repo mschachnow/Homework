@@ -8,12 +8,12 @@
         theMessage.innerText = message;
         thePopUp.style.display = 'block';
     }
-  
+
 
     function get(id) {
         return document.getElementById(id);
     }
-    
+
     get('alert').addEventListener('click', () => {
         show('This is a test of the emergency broadcast system');
     });
@@ -27,5 +27,5 @@
         thePopUp.style.display = 'none';
     });
 
-        
+
 }());
