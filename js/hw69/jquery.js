@@ -55,7 +55,7 @@ window.pcs = (function (id) {
             setCss(theElem, 'display', 'block');
             return this;
         },
-        changeColors: function (myInterval, duration) {
+        changeColors: function (myInterval, duration = 10000) {
             let interval = setInterval(changeColor, myInterval);
             setTimeout(() => clearInterval(interval), duration);
             return this;
