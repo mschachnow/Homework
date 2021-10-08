@@ -63,3 +63,14 @@ window.pcs = (function (id) {
 
     };
 });
+
+
+
+
+<script>
+    $("#user").submit(function (event) {
+        alert("name = ");
+            console.log(value);
+            event.preventDefault();
+        });
+    </script>
