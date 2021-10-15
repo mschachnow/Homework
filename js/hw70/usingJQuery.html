@@ -7,44 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style></style>
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tTXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <form id="user" action="">
-        <input type="name" value="">
 
-        <input type="address" id="name" name="yourName" value="ko">
-        <input type="submit" id="address">
-        <input type="checkbox">
+    <input type="checkbox" id="agree">I agree to the conditions
+    <form id="theForm">
+        <h1>Enter your Info</h1>
+        <label>name: <input id="name" name="name" required></label>
+        <label>Address: <input id="address"></label>
+        <button disabled>Submit</button>
+
     </form>
-    <p id="output"></p>
-    <script>
-        $("other").click(function () {
-            $("#user").submit();
-            event.preventDefault();
-        });
-    </script>
-    <script>
-        $("#name")
-            .keyup(function () {
-                var value = $("#name").val();
-                $("p").text(value);
-            })
-            .keyup();
-    </script>
-    <script>
-        $("form").submit(function (event) {
-            event.preventDefault();
-        });
-    </script>
 
-    <script>
-        $("#form input").each(function () {
-            data[yourName] = theFieldValue;
-        });
-    </script>
+    <hr>
+    your name is: <span></span>
+    your address is: <span></span>
 
+    <script src="jquery"></script>
     <script src="usingJQuery.js"></script>
 
 </body>
