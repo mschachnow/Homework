@@ -1,14 +1,11 @@
 (async function () {
     'use strict';
 
-
-
     async function fetchRecipes(file) {
         const response = await fetch(file);
         const recipes = await response.json();
         console.log(recipes);
         return recipes;
-
     }
     const recipes = await fetchRecipes('list.json');
     recipes.forEach(async recipe => {
@@ -26,7 +23,4 @@
 
         return loadRecipe;
     });
-
-
-
 }());
