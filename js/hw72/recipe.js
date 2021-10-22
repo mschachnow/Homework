@@ -13,7 +13,7 @@
 
         console.log(recipe);
     });
-    $("input[name='recipes']").click(async function () {
+    $("input[name='recipes']").change(async function () {
         const value = $('input[name=recipes]:checked').val();
         const loadRecipe = await fetchRecipes(`${value}.json`);
         $('#nameOfRecipe').text(loadRecipe.name);
