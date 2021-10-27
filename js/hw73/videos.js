@@ -2,6 +2,7 @@
     'use strict';
 
     async function fetchVideos(file) {
+
         const response = await fetch(file);
         const videos = await response.json();
         console.log(videos);
