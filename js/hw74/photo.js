@@ -20,10 +20,11 @@
             jsonpCallback: 'jQuery35103889914196040962_1635131841821',
         }).then(x => {
             x.items.forEach(element => {
-                const container = $('#display').append(`<div id="container"></div>`);
+                const container = $('#display').append(`<div class="container"></div>`);
                 container.append([`<img src="${element.media.m}"></img>`, `<p id="title">${element.title}</p>`]);
             });
             console.log('ajax got', x);
+
 
         });
         console.log($('#searchBar').val());
