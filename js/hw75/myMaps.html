@@ -27,12 +27,20 @@
             float: right;
             width: 50%;
         }
+
+        #searching {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color: burlywood;
+            padding: 1em 1em 1em 1em;
+        }
     </style>
 </head>
 
 <body>
-    <input type="text" placeholder="search" id="search">
-    <button type="submit" id="submitButton">Go</button>
+    <div id="searching">Find for me:
+        <input type="text" placeholder="search" id="search">
+        <button type="submit" id="submitButton">Go</button>
+    </div>
     <div id="sidebar"></div>
     <div id="map"></div>
     <div id="pan"></div>

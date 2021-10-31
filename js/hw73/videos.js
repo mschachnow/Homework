@@ -8,6 +8,7 @@
         console.log(videos);
         return videos;
     }
+
     const videos = await fetchVideos('videos.json');
 
     videos.forEach(video => {

@@ -12,26 +12,29 @@
 
     const theSearchButton = $('#submitSearch');
 
+    let pictures;
+
     theSearchButton.click(function () {
         $.ajax({
-            //url: 'someData?callback=?',
+
             url: 'kotelResult.js',
             dataType: 'jsonp',
             jsonpCallback: 'jQuery35103889914196040962_1635131841821',
         }).then(x => {
             x.items.forEach(element => {
-                const container = $('#display').append(`<div class="container"></div>`);
-                container.append([`<img src="${element.media.m}"></img>`, `<p id="title">${element.title}</p>`]);
+                const containers = $(`<figure class="container"></figure>`).appendTo('#display');
+                containers.append([`<img src="${element.media.m.replace('_m', '')}" alt="${element.title}">`, `<figcaption id="title">${element.title}</figcaption>`]);
             });
             console.log('ajax got', x);
 
 
         });
         console.log($('#searchBar').val());
+
+        pictures = x.items;
+
+        refreshPicture();
     });
-
-
-
     //$.getJSON('kotelResult.js&callback=jQuery35103889914196040962_1635131841821')
     //   .then(x => console.log('ajax got', x));
 
