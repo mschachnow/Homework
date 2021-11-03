@@ -1,23 +1,34 @@
 /*global google*/
 (async function () {
     'use strict';
+    function doTimeoutWithPromise(callback, delay) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => { map.panTo(location) }, 1000);
+                .then(() => doTimeout());
+        });
+    }
+
 
     const bounds = new google.maps.LatLngBounds();
+    const infoWindow = new google.maps.infoWindow();
+    let selectedPlace = null;
+    //const placesList =
 
     function createMarkers(info) {
 
         const location = { lat: info.lat, lng: info.lng };
         const newMarker = new google.maps.Marker({
-
             position: location,
             map: map,
             title: info.title,
-            url: info.wikipediaUrl
+            animation: google.maps.Animation.DROP,
+            icon: info.thumbnailImg ? {
+                url: info.thumbnailImg,
+                scaledSize: new google.maps.Size(50, 50)
+            } : undefined
         });
         bounds.extend(location);
     }
-
-
     $('#submitButton').on('click', async () => {
 
 
@@ -25,10 +36,26 @@
 
         info.geonames.forEach(data => {
             createMarkers(data);
-            const dataSections = $(`<div class="dataChunks"></div>`).appendTo('#sidebar');
+            const dataSections = $(`<div class="dataChunks"></div>`).appendTo('#sidebar')
+                .click(async () => {
+                    await doTimeoutWithPromise(() => map.panTo(location), 1000);
+                    await doTimeoutWithPromise(() => map.zoom(18), 1000);
+
+
+                });
 
             dataSections.append([`<h1>${data.title}</h1>`, `<p id="summary">${data.summary}</p>`,
-            `<img src="${data.thumbnail}">`]);
+            `<img src="${data.thumbnailImg}">`]);
+
+            click(async () => {
+                if (selectedPlace === location) {
+                    $('.summary').slidUp('slow');
+                    $('.dataChunks').find('.summary').slidDown('slow');
+                    selectedPlace = null;
+                    return;
+                }
+                selectedPlace = location;
+            });
 
 
             console.log(data);
@@ -47,22 +74,31 @@
         console.log(info);
         return info;
     }
-    const info = await fetchInfo('http://api.geonames.org/wikipediaSearch?q=yeshiva&maxRows=10&username=&type=json');
+    const info = await fetchInfo('http://api.geonames.org/wikipediaSearch?q=yeshiva&maxRows=10&username=mschachnow&type=json');
     console.log(info);
+
+    newMarker.addListener('click', () => {
+        infoWindow.setContent(`
+            <h3>${location.title}</h3>
+            <p>${location.summary}</p>
+            <br>
+            <a target="_blank" href="https://${location.wikipediaUrl}"some data</a>
+        `);
+    });
 
     const bmgLoc = { lat: 40, lng: -74 };
     const pcsLoc = { lat: 40, lng: -74 };
 
     const map = new google.maps.Map(document.getElementById('map'), {
-        center: bmgLoc,
+        center: 'New Jersey',
         zoom: 8,
         //mapTypeId: google.maps.MapTypeId.SATELLITE
     });
-    console.log(google.maps.MapTypeId.SATELLITE);
+    //console.log(google.maps.MapTypeId.SATELLITE);
 
-    const infoWindow = new google.maps.Marker({
-        constent: '<h>BMG</h>'
-    });
+    //const infoWindow = new google.maps.Marker({
+    //    constent: '<h>BMG</h>'
+    //});
 
     const marker1 = new google.maps.Marker({
         position: bmgLoc,

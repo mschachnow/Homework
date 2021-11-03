@@ -20,31 +20,63 @@
         #map,
         #pan {
             float: left;
-            width: 50%;
+            width: 70%;
         }
 
         #sidebar {
             float: right;
-            width: 50%;
+            width: 30%;
+            border-left: 1px solid black;
+            box-sizing: border-box;
+            overflow-y: auto;
+            font-size: 12px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+        }
+
+        .dataChunks {
+            list-style-type: none;
+            margin: 0;
+            border: 1px solid gray;
+            padding-left: 1em;
+            padding-right: 2em;
+
+        }
+
+        .dataChunks:hover {
+            background-color: lightgrey;
         }
 
         #searching {
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             background-color: burlywood;
             padding: 1em 1em 1em 1em;
+            border-bottom: .3em solid black;
+            display: block;
+
+
+        }
+
+        .summary {
+            display: none;
         }
     </style>
 </head>
 
 <body>
-    <div id="searching">Find for me:
-        <input type="text" placeholder="search" id="search">
+    <div id="searching">Search for a location:
+        <!--form id="searchGo"-->
+        <input type="text" placeholder="search" id="search" requiered>
+        <!-- input type="number" id="rows" min="1" max="20 requiered">
+        < /form-->
         <button type="submit" id="submitButton">Go</button>
     </div>
     <div id="sidebar"></div>
     <div id="map"></div>
     <div id="pan"></div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=&v=weekly"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZ4j0BbPvQXpAR16uPRJ2_FQNJaWNkD5o
+    &v=weekly"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="myMaps.js"></script>
