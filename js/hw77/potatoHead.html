@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            background-color: deepskyblue;
+        }
+
+        div {
+            background-color: whitesmoke;
+        }
+
+
+
+        #body {
+            position: absolute;
+            top: 35%;
+            left: 35%;
+            z-index: 0;
+        }
+
+        #eyes {
+            position: absolute;
+            top: 1px;
+            left: 25%;
+        }
+
+        #mouth {
+            position: absolute;
+            top: 1px;
+            left: 40%;
+        }
+
+        #nose {
+            position: absolute;
+            top: 1px;
+            left: 55%;
+        }
+
+        .part {
+            position: absolute;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="images/body.png" class="part" id="body">
+        <img src="images/eyes.png" class="part" id="eyes">
+        <img src="images/mouth.png" class="part" id="mouth">
+        <img src="images/nose.png" class="part" id="nose">
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="potatoHead.js"></script>
+</body>
+
+</html>

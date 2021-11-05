@@ -15,8 +15,9 @@
         }
     });
     const drawingManager = new google.maps.drawing.DrawingManager({
-        drawingMode: google.maps.drawing.OverlayType.MARKER,
-        drawingControl: true,
+
+        //drawingMode: google.maps.drawing.OverlayType.MARKER,
+        //drawingControl: true,
         drawingControlOptions: {
             position: google.maps.ControlPosition.TOP_CENTER,
             drawingModes: [
@@ -34,7 +35,7 @@
 
     drawingManager.setMap(map);
 
-    google.maps.event.addListener(drawingManager, 'markercomplete', marker => {
+    drawingManager.addListener(drawingManager, 'markercomplete', marker => {
         markerArray.push(marker.getPosition());
         localStorage.setItem('markers', JSON.stringify(markerArray));
         console.log(markerArray);
@@ -57,7 +58,7 @@
         });
     }
 
-    google.maps.event.addListener(drawingManager, 'circlecomplete', circle => {
+    drawingManager.addListener(drawingManager, 'circlecomplete', circle => {
         circleArray.push({ center: circle.getCenter(), radius: circle.getRadius() });
         localStorage.setItem('circles', JSON.stringify(circleArray));
         console.log(circleArray);
@@ -76,7 +77,7 @@
         });
     }
 
-    google.maps.event.addListener(drawingManager, 'rectanglecomplete', rectangle => {
+    drawingManager.addListener(drawingManager, 'rectanglecomplete', rectangle => {
         rectangleArray.push(rectangle.getBounds());
         localStorage.setItem('rectangles', JSON.stringify(rectangleArray));
         console.log(rectangleArray);
@@ -93,7 +94,7 @@
             });
         });
     }
-    google.maps.event.addListener(drawingManager, 'polylinecomplete', polyline => {
+    drawingManager.addListener(drawingManager, 'polylinecomplete', polyline => {
         polylineArray.push(polyline.getPath().getArray());
         localStorage.setItem('polylines', JSON.stringify(polylineArray));
         console.log(polylineArray);
@@ -111,7 +112,7 @@
         });
     }
 
-    google.maps.event.addListener(drawingManager, 'polygoncomplete', polygon => {
+    drawingManager.addListener(drawingManager, 'polygoncomplete', polygon => {
         polygonArray.push(polygon.getPath().getArray());
         localStorage.setItem('polygons', JSON.stringify(polygonArray));
         console.log(polygonArray);
