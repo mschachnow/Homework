@@ -5,7 +5,7 @@
     let offset;
     let zIndex = 0;
     const boing = $('#boing').find('audio')[0];
-    const parts[];
+    //const parts[];
 
     $(document)
         .on('mousedown', '.part', e => {
