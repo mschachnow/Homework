@@ -7,11 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .partsPane {
+        html width {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+
+        #partsPane {
             height: 130px;
             width: 100%;
             background-color: darkmagenta;
             border: 1px solid black;
+        }
+
+        #song {
+            position: absolute;
+            bottom: 1px;
+            right: 1px;
         }
 
         body {
@@ -25,7 +37,7 @@
             position: absolute;
             top: 35%;
             left: 35%;
-            z-index: 0;
+            z-index: 0 !important;
         }
 
         #eyes {
@@ -70,16 +82,24 @@
             left: 1%;
         }
 
+        #shoes2 {
+            position: absolute;
+            height: 120px;
+            top: 10px;
+        }
+
         #myHat {
             position: absolute;
             height: 95px;
-            top: 10px;
+            top: 20px;
             left: 85%;
         }
 
 
+
         .part {
             position: absolute;
+            user-select: none;
 
         }
 
@@ -94,10 +114,11 @@
 </head>
 
 <body>
-
-    <div></div>
+    <audio id="boing">
+        <source src="music/boing.mp3">
+    </audio>
     <img src="images/body.png" class="part" id="body">
-    <div class="partsPane">
+    <div id="partsPane">
 
         <img src="images/eyes.png" class="part" id="eyes">
         <img src="images/mouth.png" class="part" id="mouth">
@@ -107,20 +128,17 @@
         <img src="images/teethMoustache.png" class="part" id="teethMoustache">
         <img src="images/moustache.png" class="part" id="moustache">
         <img src="images/myHat.png" class="part" id="myHat">
+        <img src="images/shoes2.png" class="part" id="myHat">
 
     </div>
     <p id="title">Can you dress Mr.Potato Head?</p>
-    <audio id="song" audioplay loop src="music/05 - Lo Alecha.mp3">
+    <audio id="song" controls audioplay loop src="music/05 - Lo Alecha.mp3">
         <audio controls audioplay loop>
             <source src="music/05 - Lo Alecha.mp3">
         </audio>
-        <audio id="boing" constrols audioplay loop src="music/boing.m4a">
-            <audio audioplay loop>
-                <source src="music/boing.m4a">
-            </audio>
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-            <script src="potatoHead.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="potatoHead.js"></script>
 </body>
 
 </html>

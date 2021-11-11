@@ -1,19 +1,36 @@
 (function () {
     'use strict';
 
+    function saveState() {
+        const partsInfo = [];
+        parts.each((i, part) => {
+            console.log(part);
+            part = $(part);
+            partsInfo.push({
+                src: part.attr('src'),
+                top: part.css('top'),
+                left: part.css('left'),
+                zIndex: part.css('zIndex'),
+
+            });
+
+        });
+        localStorage.setItem('bodypart', JSON.stringify(partsInfo));
+    }
+
     let bodypart = null;
     let offset;
     let zIndex = 0;
-    const boing = $('#boing').find('audio')[0];
-    //const parts[];
+    const parts = $('.part');
 
     $(document)
         .on('mousedown', '.part', e => {
-
             console.log('mousedown');
             bodypart = $(e.target);
             offset = { x: e.offsetX, y: e.offsetY };
+
         })
+
         .mousemove(e => {
             if (bodypart) {
                 e.preventDefault();
@@ -25,25 +42,24 @@
         })
 
         .mouseup(() => {
-
             if (bodypart) {
+                document.getElementById('boing').play();
                 console.log('mouseup');
-
                 bodypart = null;
-                boing.play();
-                let image = bodypart.getItem();
-                //console.log(bodypart.getPosition());
-                localStorage.setItem('bodypart', 'image');
-                localStorage.setItem('bodypart', bodypart.getPosition());
+                saveState();
 
             }
         });
-    const savedParts = localStorage.getItem('bodypart');
-    console.log(savedParts);
 
-    /*bodypart.click(function () {
-        $('#boing').play();
-        console.log(print);
-    });*/
+    const data = localStorage.getItem('bodypart');
+
+    if (data) {
+        $('#partsPane').empty();
+        const partsInfo = JSON.parse(data);
+        partsInfo.forEach(partInfo => {
+            console.log(partInfo);
+            $(`<img src="${partInfo.src}" class="part">`).css(partInfo).appendTo('#partsPane');
+        });
+    }
 
 }());
