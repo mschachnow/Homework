@@ -3,6 +3,8 @@
 
     function saveState() {
         const partsInfo = [];
+        const parts = $('.part');
+
         parts.each((i, part) => {
             console.log(part);
             part = $(part);
@@ -16,12 +18,12 @@
 
         });
         localStorage.setItem('bodypart', JSON.stringify(partsInfo));
+
     }
 
     let bodypart = null;
     let offset;
     let zIndex = 0;
-    const parts = $('.part');
 
     $(document)
         .on('mousedown', '.part', e => {
