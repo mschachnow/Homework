@@ -14,10 +14,11 @@
         }
 
         #partsPane {
-            height: 130px;
+            height: 300px;
             width: 100%;
-            background-color: darkmagenta;
+            background-color: rgb(64, 173, 91);
             border: 1px solid black;
+            align-items: center;
         }
 
         #song {
@@ -33,69 +34,30 @@
             border: 1px solid black;
         }
 
+        #partBox {
+            height: 160px;
+            width: 130px;
+            margin: .3em;
+            border: 1px solid black;
+            float: left;
+            background-color: rgb(171, 204, 162);
+            align-content: center;
+        }
+
         #body {
             position: absolute;
-            top: 35%;
+            top: 50%;
             left: 35%;
             z-index: 0 !important;
         }
 
-        #eyes {
+        #partsPane img {
             position: absolute;
-            top: 8px;
-            left: 28%;
-        }
-
-        #mouth {
-            position: absolute;
-            top: 8px;
-            left: 40%;
-        }
-
-        #nose {
-            position: absolute;
-            top: 10px;
-            left: 55%;
-        }
-
-        #moustache {
-            position: absolute;
-            top: .5px;
-            left: 68%;
-        }
-
-        #l_ear {
-            position: absolute;
-            top: 10px;
-            left: 14%;
-        }
-
-        #r_ear {
-            position: absolute;
-            top: 10px;
-            left: 22%;
-        }
-
-        #teethMoustache {
-            position: absolute;
-            top: .1px;
-            left: 1%;
-        }
-
-        #shoes2 {
-            position: absolute;
-            height: 120px;
-            top: 10px;
         }
 
         #myHat {
-            position: absolute;
             height: 95px;
-            top: 20px;
-            left: 85%;
         }
-
-
 
         .part {
             position: absolute;
@@ -106,7 +68,7 @@
         #title {
             text-align: center;
             color: rgb(212, 166, 106);
-            font-size: 1.5em;
+            font-size: 2em;
             font-style: italic;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         }
@@ -119,19 +81,17 @@
     </audio>
     <img src="images/body.png" class="part" id="body">
     <div id="partsPane">
-
-        <img src="images/eyes.png" class="part" id="eyes">
-        <img src="images/mouth.png" class="part" id="mouth">
-        <img src="images/nose.png" class="part" id="nose">
-        <img src="images/l_ear.png" class="part" id="l_ear">
-        <img src="images/r_ear.png" class="part" id="r_ear">
-        <img src="images/teethMoustache.png" class="part" id="teethMoustache">
-        <img src="images/moustache.png" class="part" id="moustache">
-        <img src="images/myHat.png" class="part" id="myHat">
-        <img src="images/shoes2.png" class="part" id="myHat">
-
+        <div id="partBox"><img src="images/eyes.png" class="part" id="eyes"></div>
+        <div id="partBox"><img src="images/mouth.png" class="part" id="mouth"></div>
+        <div id="partBox"><img src="images/nose.png" class="part" id="nose"></div>
+        <div id="partBox"><img src="images/l_ear.png" class="part" id="l_ear"></div>
+        <div id="partBox"><img src="images/r_ear.png" class="part" id="r_ear"></div>
+        <div id="partBox"><img src="images/teethMoustache.png" class="part" id="teethMoustache"></div>
+        <div id="partBox"><img src="images/moustache.png" class="part" id="moustache"></div>
+        <div id="partBox"><img src="images/myHat.png" class="part" id="myHat"></div>
+        <div id="partBox"><img src="images/shoes2.png" class="part" id="myHat"></div>
     </div>
-    <p id="title">Can you dress Mr.Potato Head?</p>
+    <div id="title">Can you dress Mr.Potato Head?</div>
     <audio id="song" controls audioplay loop src="music/05 - Lo Alecha.mp3">
         <audio controls audioplay loop>
             <source src="music/05 - Lo Alecha.mp3">
