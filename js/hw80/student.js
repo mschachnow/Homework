@@ -18,12 +18,19 @@ const s3 = new Student('Gitty', 'Schwartz', '15', '11th');
 
 const studentArray = [s1, s2, s3];
 
-function printStudents(...students) {
+function printStudents(backwards, ...students) {
+
     students.forEach(eachStudent => {
-        console.log(`${eachStudent.firstName} ${eachStudent.lastName} ${eachStudent.age} ${eachStudent.grade}`);
+        let { firstName: a, lastName: b, age, grade } = eachStudent;
+        if (backwards) {
+            [a, b] = [b, a];
+        } else {
+            console.log(`${eachStudent.firstName} ${eachStudent.lastName} ${eachStudent.age} ${eachStudent.grade}`);
+        }
     });
 }
-printStudents(...studentArray);
+printStudents(false, ...studentArray);
+printStudents(true, ...studentArray);
 //let [one, two, three] = studentArray;
 
 function copy(theStudent) {
