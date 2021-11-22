@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+
+        }
+
+        #addAnt {
+            position: absolute;
+            padding: 1em;
+            width: 100%;
+            background-color: rgb(156, 151, 151);
+        }
+
+        .food {
+            padding-top: 7em;
+
+        }
+    </style>
+</head>
+
+<body>
+    <form id="addAnt">
+        <label>Color:
+            <input type="color" id="color">
+        </label>
+        <label>Amount:
+            <input type="number" id="amount" min="1" value="1">
+        </label>
+        <button>add ant</button>
+    </form>
+    <img src="images/mac.png" class="food" id="mac">
+    <img src="images/bittenBread.png" class="food" id="bread">
+    <img src="images/cherrio.png" class="food" id="cherrio">
+    <canvas id="theCanvas"></canvas>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="ants.js"></script>
+</body>
+
+</html>
