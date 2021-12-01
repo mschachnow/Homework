@@ -4,7 +4,7 @@
     function doTimeoutWithPromise(callback, delay) {
         return new Promise((resolve, reject) => {
             setTimeout(() => { map.panTo(location) }, 1000);
-                .then(() => doTimeout());
+            //.then(() => doTimeout());
         });
     }
 

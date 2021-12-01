@@ -9,7 +9,7 @@
     }
     const recipes = await fetchRecipes('list.json');
     recipes.forEach(async recipe => {
-        $('#recipeForm').append([`<input type="radio" name="recipes" value=${recipe.name}>`, `<label for=${recipe.name}>${recipe.name}</label>`]);
+        $('#recipeForm')([`<input type="radio" name="recipes" value=${recipe.name}>`, `<label for=${recipe.name}>${recipe.name}</label>`]);
 
         console.log(recipe);
     });

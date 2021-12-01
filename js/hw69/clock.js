@@ -5,7 +5,7 @@ window.pcs.clock = (function () {
     function createClock() {
 
         let clock = document.createElement('div');
-        document.body.appendChild(clock);
+        document.bodyChild(clock);
 
         function currentTime() {
 
