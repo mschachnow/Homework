@@ -1,8 +1,8 @@
 {
-  "name": "hw84",
+  "name": "hw86",
   "version": "1.0.0",
   "description": "",
-  "main": "node.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
@@ -13,6 +13,8 @@
   "devDependencies": {
     "webpack": "^5.65.0",
     "webpack-cli": "^4.9.1",
+    "html-loader": "^3.0.1",
+    "html-webpack-plugin": "^5.5.0",
     "css-loader": "^6.5.1",
     "jquery": "^3.6.0",
     "style-loader": "^3.3.1"
