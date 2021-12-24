@@ -1,0 +1,1 @@
+export const snake_size = 64;

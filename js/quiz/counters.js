@@ -24,6 +24,7 @@ window.myApp.counters = (function (myModule) {
     myModule.counter1.increment();
     myModule.counter1.getCounter();
 
+
     const t = myModule.create('t');
     myModule.inc.call(t);
     myModule.inc.call(t);
