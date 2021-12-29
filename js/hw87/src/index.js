@@ -9,8 +9,10 @@ import crash from '../media/crash.mp3';
 import Snake from './snake.js';
 import Apple from './apple.js';
 import { snake_size } from './constant.js';
+//import { score } from './snake.js';
 
-const canvas = document.getElementById('theCanvas');
+
+export const canvas = document.getElementById('theCanvas');
 const context = canvas.getContext('2d');
 //const snake_size = 64;
 
@@ -30,25 +32,27 @@ crashSound.src = crash;
 let score = 0;
 let gameover = false;
 let speed = 500;
+function get score(){
+    return score;
+}
+function set score(){
+
+}
 
 let snake;
+// eslint-disable-next-line no-unused-vars
 let apple;
 
 function gameLoop() {
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.font = 'bold 30px Arial';
     context.fillText(`score: ${score}`, canvas.width - 160, 40);
+    console.log(score);
     snake.move();
     apple.draw();
 
     if (!gameover) {
         setTimeout(gameLoop, speed);
-    } else {
-        context.font = 'bold 50px Arial';
-        context.fillText('Game Over', canvas.width / 2 - 80, canvas.height / 2);
-        crashSound.currentTime = 0; //in this case it was playing
-        crashSound.play();
-        //setTimeout(context.clearRect(0, 0, canvas.width, canvas.height), 100);
     }
 }
 const theButton = document.getElementById('playAgain');
@@ -59,15 +63,32 @@ snakeHeadImg.src = snakeHead;
 playGame();
 function playGame() {
     snakeHeadImg.onload = () => {
-        snake = new Snake();
+
         setTimeout(gameLoop, speed);
     };
 }
+function gameOverCb() {
+    gameover = true;
+    console.log(gameover);
+    context.font = 'bold 50px Arial';
+    context.fillText('Game Over', canvas.width / 2 - 80, canvas.height / 2);
+    crashSound.currentTime = 0; //in this case it was playing
+    crashSound.play();
+}
 const appleImg = new Image();
 appleImg.src = redapple;
-appleImg.onload = () => {
-    apple = new Apple();
-};
+
+function waitForImagesToLoad(img) {
+    return new Promise((resolve, reject) => {
+        img.onload = () => resolve();
+        img.onerror = () => reject();
+    });
+}
+Promise.all([waitForImagesToLoad(snakeHeadImg), waitForImagesToLoad(appleImg)])
+    .then(() => {
+        apple = new Apple();
+        snake = new Snake(canvas, snakeHeadImg, apple, gameOverCb);
+    })
 //}());
 
 

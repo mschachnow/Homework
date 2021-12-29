@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        //part two
+        const text = <button>This is cool!</button>;
+        //part one
+        ReactDOM.render(
+            <h1>THis is cool!</h1>,
+            document.getElementById('root')
+        );
+        ReactDOM.render(
+            text,
+            document.getElementById('root')
+        );
+        //part three
+        ReactDOM.render(
+            <h2>Current Date:{new Date().toLocaleDateString()}</h2>,
+            document.getElementById('root')
+        );
+        function getDate() {
+            return (<>
+                <header><h1>Current Date:</h1></header>
+                <h2>{new Date().toLocaleDateString()}</h2>
+                <h1>Tomorrow will be...</h1>
+                <h2>{new Date().toUTCString()}</h2>
+            </>);
+        }
+        ReactDOM.render(
+            getDate(),
+            document.getElementById('root')
+        );
+
+    </script>
+
+</body>
+
+</html>
