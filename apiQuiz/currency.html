@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency converter</title>
+    <style>
+        body {
+            text-align: center;
+
+            background-color: rgb(34, 94, 34);
+            border: grey 3px;
+
+        }
+
+        h1 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border-bottom: 2px inset black;
+        }
+
+        h3 {
+            font-style: oblique;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Currency converter</h1>
+    <h3>select a country</h3>
+    <select name="country" id="countrySelected">
+        <option hidden>Choose a country</option>
+
+    </select>
+    <br>
+    <input type="text">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--script
+        src="https://free.currconv.com/api/v7/convert?q=USD_PHP,PHP_USD&compact=ultra&callback=sampleCallback&apiKey=18119a5a0b863b436f7d"></script>
+    <script src="https://free.currconv.com/api/v7/countries?apiKey=18119a5a0b863b436f7d"></script-->
+    <script src="currency2.js"></script>
+</body>
+
+</html>

@@ -20,7 +20,7 @@ const studentArray = [s1, s2, s3];
 
 function printStudents(backwards, ...students) {
 
-    students.forEach(eachStudent => {
+    students.(eachStudent => {
         let { firstName: a, lastName: b, age, grade } = eachStudent;
         if (backwards) {
             [a, b] = [b, a];

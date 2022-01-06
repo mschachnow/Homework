@@ -58,7 +58,7 @@
     if (data) {
         $('#partsPane').empty();
         const partsInfo = JSON.parse(data);
-        partsInfo.forEach(partInfo => {
+        partsInfo.(partInfo => {
             console.log(partInfo);
             $(`<img src="${partInfo.src}" class="part">`).css(partInfo).appendTo('#partsPane');
         });
