@@ -7,10 +7,16 @@ class App extends Component {
     total: 0
   }
   clickNum(numC) {
+
     this.setState({
       currentNumber: numC,
       //total: this.state.total + numC,
     })
+    if (this.state.total === 0) {
+      this.setState({ total: this.state.total + numC });
+    }
+    console.log(this.state.total);
+
 
   }
   createNumberButton(num) {
@@ -19,7 +25,47 @@ class App extends Component {
   }
 
   createOperatorButton(operation) {
+
     return <button className="btn btn-danger" onClick={() => this.setState({ operator: operation })} > {operation} </ button>
+
+  }
+  equals() {
+
+    console.log(this.state.operator);
+    switch (this.state.operator) {
+      case '+':
+        this.setState({ total: this.state.total + this.state.currentNumber });
+        break;
+      case '-':
+        this.setState({ total: this.state.total - this.state.currentNumber });
+        break;
+      /*case 'x':
+        this.state.total = this.state.total * this.state.currentNumber;
+        break;
+      case '÷':
+        this.state.total = this.state.total / this.state.currentNumber;
+        break;*/
+      default:
+        this.setState({ total: this.state.total });
+    }
+
+    /*if (operator === '+') {
+      total += currentNumber;
+      console.log(total);
+      return total;
+    } else if (operator === '-') {
+      return total = total - currentNumber;
+    } else if (operator === 'x') {
+      return total = total * currentNumber;
+    } else if (operator === '÷') {
+      return total = total / currentNumber;
+    } else {
+      console.log(total);
+      return total
+    }*/
+
+
+
   }
   render() {
     return (
@@ -39,11 +85,15 @@ class App extends Component {
           <br></br>
           {this.createOperatorButton('+')}
           {this.createOperatorButton('-')}
-          {this.createOperatorButton('X')}
+          {this.createOperatorButton('x')}
           {this.createOperatorButton('÷')}
-          {this.createOperatorButton('=')}
+          <button className="btn btn-danger" onClick={() => this.equals()}>=</ button>
         </div>
-        <div className="text-center">{this.state.currentNumber}</div>
+
+        <div className="text-center">{this.state.operator}</div>
+        <div className="text-center">{this.state.total}</div>
+
+
       </div>
 
     );
