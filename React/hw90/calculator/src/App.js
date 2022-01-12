@@ -9,7 +9,7 @@ class App extends Component {
   clickNum(numC) {
 
     this.setState({
-      currentNumber: numC,
+      currentNumber: this.state.currentNumber !== '0' ? this.state.currentNumber + numC : numC.toString(),
       //total: this.state.total + numC,
     })
     if (this.state.total === 0) {
@@ -20,13 +20,13 @@ class App extends Component {
 
   }
   createNumberButton(num) {
-    return <button className="btn btn-secondary" onClick={() => this.clickNum(num)}>{num}</button>
+    return <button onClick={() => this.clickNum(num)}>{num}</button>
 
   }
 
   createOperatorButton(operation) {
 
-    return <button className="btn btn-danger" onClick={() => this.setState({ operator: operation })} > {operation} </ button>
+    return <button onClick={() => this.setState({ operator: operation })} > {operation} </ button>
 
   }
   equals() {
@@ -39,12 +39,12 @@ class App extends Component {
       case '-':
         this.setState({ total: this.state.total - this.state.currentNumber });
         break;
-      /*case 'x':
-        this.state.total = this.state.total * this.state.currentNumber;
+      case 'x':
+        this.setState({ total: this.state.total * this.state.currentNumber });
         break;
       case '÷':
-        this.state.total = this.state.total / this.state.currentNumber;
-        break;*/
+        this.setState({ total: this.state.total / this.state.currentNumber });
+        break;
       default:
         this.setState({ total: this.state.total });
     }
@@ -64,36 +64,32 @@ class App extends Component {
       return total
     }*/
 
-
-
   }
   render() {
     return (
-      <div className="container-fluid" >
-        <div className="text-center">
-          {this.createNumberButton(1)}
-          {this.createNumberButton(2)}
-          {this.createNumberButton(3)}
-          <br></br>
-          {this.createNumberButton(4)}
-          {this.createNumberButton(5)}
-          {this.createNumberButton(6)}
-          <br></br>
-          {this.createNumberButton(7)}
-          {this.createNumberButton(8)}
-          {this.createNumberButton(9)}
-          <br></br>
-          {this.createOperatorButton('+')}
-          {this.createOperatorButton('-')}
-          {this.createOperatorButton('x')}
-          {this.createOperatorButton('÷')}
-          <button className="btn btn-danger" onClick={() => this.equals()}>=</ button>
-        </div>
+      <div className="calculator" >
 
-        <div className="text-center">{this.state.operator}</div>
-        <div className="text-center">{this.state.total}</div>
+        <input value={this.state.total} />
+        {this.createNumberButton(1)}
+        {this.createNumberButton(2)}
+        {this.createNumberButton(3)}
+        {this.createNumberButton(4)}
+        {this.createNumberButton(5)}
+        {this.createNumberButton(6)}
+        {this.createNumberButton(7)}
+        {this.createNumberButton(8)}
+        {this.createNumberButton(9)}
+        {this.createOperatorButton('+')}
+        {this.createNumberButton(0)}
+        {this.createOperatorButton('-')}
+        {this.createOperatorButton('x')}
+        {this.createOperatorButton('÷')}
+        <button onClick={() => this.equals()}>=</ button>
 
-
+        <div >{this.state.total}</div>
+        <div >{this.state.operator}</div>
+        <div >{this.state.currentNumber}</div>
+        <div >{this.state.total}</div>
       </div>
 
     );
