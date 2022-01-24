@@ -8,17 +8,18 @@ import { Routes, Route, Outlet, Navigate } from 'react-router-dom';
 import Header from './Header';
 
 export default function App() {
-  const [recipeData, setRecipeData] = useState({ recipes: [''] })
+  const [recipeData, setRecipeData] = useState([])
 
-  const [recipes, selectedRecipe] = recipeData;
+  //const [recipes, selectedRecipe] = recipeData;
 
-  const selectRecipe = (index) => {
+
+  /*const selectRecipe = (index) => {
     console.log('selectRecipe', index);
     //here goes await fetch recipes
     setRecipeData({
       ...recipeData
     });
-  }
+  }*/
   useEffect(() => {
     (async () => {
       const response = await fetch('recipes.json');
@@ -40,9 +41,9 @@ export default function App() {
       <div className='text-center'>
         <Header />
         <Routes>
-          <Route index element={<RecipeList recipes={recipes} />} />
+          <Route index element={<RecipeList />} />
 
-          <Route path='/recipe/:id' element={<RecipeDetails recipes={recipes} />} />
+          <Route path='/recipe/:id' element={<RecipeDetails />} />
 
           {/*<Route path='*' element={<h5 style={{ color: 'red' }}>This is not the page you are looking for - 404</h5>} />*/}
 

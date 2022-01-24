@@ -1,8 +1,14 @@
+import './index.css';
+import $ from 'jquery';
 
+async function loadBlogs() {
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users')
 
-
-fetch('https://jsonplaceholder.typicode.com/users')
-    .then(response => response.json())
+        if (!response)}
+}
+fetch()
+    .then()
     .then(users => {
         console.log(users)
         users.forEach(user => {
@@ -10,11 +16,11 @@ fetch('https://jsonplaceholder.typicode.com/users')
         });
     })
 
-fetch('https://jsonplaceholder.typicode.com/posts?userId=2')
+fetch(`https://jsonplaceholder.typicode.com/posts?userId=${blog.id}`)
     .then(response => response.json())
     .then(users => console.log(users))
 
-fetch('https://jsonplaceholder.typicode.com/comments?postId=5')
+fetch(`https://jsonplaceholder.typicode.com/comments?postId=${blog.id}`)
     .then(response => response.json())
     .then(users => console.log(users))
 
