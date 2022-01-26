@@ -1,7 +1,7 @@
 import './posts.css';
 import $ from 'jquery';
 import setPage from "./page";
-import loadComments from './comments';
+import loadComments from './Comments';
 
 function createPostEntry(post) {
   const postElem = $(`<div class="post">
