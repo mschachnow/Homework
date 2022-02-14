@@ -1,0 +1,7 @@
+<h1>category selection</h1>
+<select id="categories" [(ngModel)]="selectedCategory">
+  <option [value]="category" *ngFor="let category of categories">
+    {{category.name}}
+  </option>
+</select>
+<h2>{{category.items}}</h2>

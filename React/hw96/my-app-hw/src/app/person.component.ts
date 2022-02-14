@@ -9,6 +9,6 @@ import { Person } from './person';
 export class personComponent {
 
     print() {
-        console.log(person1.name, person1.age);
+        console.log(person.name, person.age);
     }
 }
