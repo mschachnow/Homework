@@ -16,5 +16,20 @@ router.post('/api/contacts', function (req, res, next) {
   //console.log(req.body);
   contacts.push(req.body);
 });
+const mysql = require('mysql');
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
 
-module.exports = router;
+  database: 'contacts'
+});
+
+connection.connect();
+
+// for today, 1 connection available globally
+global.connection = connection;
+
+app.locals.appTitle = 'PCS Contacts App';
+module.exports = app;
+
+
