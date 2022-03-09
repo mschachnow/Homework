@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{{ title }}</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+
+  <body>
+    <h2>{{timesv}}</h2>
+    <form action="">
+      <label for="name">enter name</label>
+      <input type="text" name="name" value="{{namep}}">
+      <button>submit</button>
+    </form>
+    <h2>Hi {{namep}}</h2>
+  </body>
+</body>
+
+</html>
