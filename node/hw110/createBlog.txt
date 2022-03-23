@@ -1,0 +1,159 @@
+Microsoft Windows [Version 10.0.18363.1556]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\solom>mongosh "mongodb+srv://cluster0.3khva.mongodb.net/myFirstDatabase" --apiVersion 1 --username mschachnow
+Enter password: *********
+Current Mongosh Log ID: 623a7ca94a6a2979789acb6b
+Connecting to:          mongodb+srv://cluster0.3khva.mongodb.net/myFirstDatabase?appName=mongosh+1.3.1
+MongoServerSelectionError: connection <monitor> to 18.208.52.243:27017 closed
+
+C:\Users\solom>mongosh "mongodb+srv://cluster0.3khva.mongodb.net/myFirstDatabase" --apiVersion 1 --username mschachnow
+Enter password: *********
+Current Mongosh Log ID: 623a7d121a1304772cff51c3
+Connecting to:          mongodb+srv://cluster0.3khva.mongodb.net/myFirstDatabase?appName=mongosh+1.3.1
+MongoServerError: bad auth : Authentication failed.
+
+C:\Users\solom>mongosh "mongodb+srv://cluster0.3khva.mongodb.net/myFirstDatabase" --apiVersion 1 --username mschachnow
+Enter password: *********
+Current Mongosh Log ID: 623a7d2139e1d07b070ff407
+Connecting to:          mongodb+srv://cluster0.3khva.mongodb.net/myFirstDatabase?appName=mongosh+1.3.1
+MongoServerError: bad auth : Authentication failed.
+
+C:\Users\solom>mongosh "mongodb+srv://cluster0.3khva.mongodb.net/myFirstDatabase" --apiVersion 1 --username mschachnow
+Enter password: *********
+Current Mongosh Log ID: 623a7d2c43b2d742e39282d0
+Connecting to:          mongodb+srv://cluster0.3khva.mongodb.net/myFirstDatabase?appName=mongosh+1.3.1
+MongoServerError: bad auth : Authentication failed.
+
+C:\Users\solom>mongosh "mongodb+srv://cluster0.3khva.mongodb.net/myFirstDatabase" --apiVersion 1 --username mschachnow
+Enter password: *********
+Current Mongosh Log ID: 623a7d38c28254ae1bae9ca5
+Connecting to:          mongodb+srv://cluster0.3khva.mongodb.net/myFirstDatabase?appName=mongosh+1.3.1
+MongoServerError: bad auth : Authentication failed.
+
+C:\Users\solom>*********
+'*********' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\solom>mongosh "mongodb+srv://cluster0.3khva.mongodb.net/myFirstDatabase" --apiVersion 1 --username mschachnow
+Enter password: *******
+Current Mongosh Log ID: 623a7d649afa0f69ea414218
+Connecting to:          mongodb+srv://cluster0.3khva.mongodb.net/myFirstDatabase?appName=mongosh+1.3.1
+MongoServerError: bad auth : Authentication failed.
+
+C:\Users\solom>mongosh "mongodb+srv://cluster0.3khva.mongodb.net/myFirstDatabase" --apiVersion 1 --username mschachnow
+Enter password: *******
+Current Mongosh Log ID: 623a7d76cd2f20372308216d
+Connecting to:          mongodb+srv://cluster0.3khva.mongodb.net/myFirstDatabase?appName=mongosh+1.3.1
+Using MongoDB:          5.0.6 (API Version 1)
+Atlas atlas-62ghdy-shard-0 [primary] createBlog>
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+Atlas atlas-62ghdy-shard-0 [primary] createBlog>  use blog
+switched to db blog
+Atlas atlas-62ghdy-shard-0 [primary] blog> db .createcollection ("posts)
+Uncaught:mprove our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.coSyntaxError: Unterminated string constant. (1:22)
+You can opt-out by running the disableTelemetry() command.
+> 1 | db .createcollection ("posts)
+    |                       ^rimary] myFirstDatabase> use createBlog
+  2 |hed to db createBlog
+Atlas atlas-62ghdy-shard-0 [primary] createBlog>
+Atlas atlas-62ghdy-shard-0 [primary] blog> db .createcollection ("post")
+TypeError: db.createcollection is not a function
+Atlas atlas-62ghdy-shard-0 [primary] blog> db.createcollection("post")
+TypeError: db.createcollection is not a function
+Atlas atlas-62ghdy-shard-0 [primary] blog> db.createCollection("posts")
+{ ok: 1 }
+Atlas atlas-62ghdy-shard-0 [primary] blog> db.posts.insertOne({name : "Jill", title: "my first blog", content: "Welcome to my first blog..."});
+{
+  acknowledged: true,
+  insertedId: ObjectId("623a81fc023d9b7465f9221f")
+}
+Atlas atlas-62ghdy-shard-0 [primary] blog> db.posts.insertMany({name: "Jame", title: "my second blog", content: "Hope you enjoy the content in this second blog."}, {name: "Jim", title: "my third post", content: "This third blog is written by Jim. Enjoy the content."});
+MongoInvalidArgumentError: Argument "docs" must be an array of documents
+Atlas atlas-62ghdy-shard-0 [primary] blog> db.posts.insertMany([{name: "Jame", title: "my second blog", content: "Hope you enjoy the content in this second blog."}, {name: "Jim", title: "my third post", content: "This third blog is written by Jim. Enjoy the content."}]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("623a8331023d9b7465f92220"),
+    '1': ObjectId("623a8331023d9b7465f92221")
+  }
+}
+Atlas atlas-62ghdy-shard-0 [primary] blog> db.posts.find()
+[
+  {
+    _id: ObjectId("623a81fc023d9b7465f9221f"),
+    name: 'Jill',
+    title: 'my first blog',
+    content: 'Welcome to my first blog...'
+  },
+  {
+    _id: ObjectId("623a8331023d9b7465f92220"),
+    name: 'Jame',
+    title: 'my second blog',
+    content: 'Hope you enjoy the content in this second blog.'
+  },
+  {
+    _id: ObjectId("623a8331023d9b7465f92221"),
+    name: 'Jim',
+    title: 'my third post',
+    content: 'This third blog is written by Jim. Enjoy the content.'
+  }
+]
+Atlas atlas-62ghdy-shard-0 [primary] blog> db.posts.findOne();
+{
+  _id: ObjectId("623a81fc023d9b7465f9221f"),
+  name: 'Jill',
+  title: 'my first blog',
+  content: 'Welcome to my first blog...'
+}
+Atlas atlas-62ghdy-shard-0 [primary] blog> db.posts.find().pretty()
+[
+  {
+    _id: ObjectId("623a81fc023d9b7465f9221f"),
+    name: 'Jill',
+    title: 'my first blog',
+    content: 'Welcome to my first blog...'
+  },
+  {
+    _id: ObjectId("623a8331023d9b7465f92220"),
+    name: 'Jame',
+    title: 'my second blog',
+    content: 'Hope you enjoy the content in this second blog.'
+  },
+  {
+    _id: ObjectId("623a8331023d9b7465f92221"),
+    name: 'Jim',
+    title: 'my third post',
+    content: 'This third blog is written by Jim. Enjoy the content.'
+  }
+]
+Atlas atlas-62ghdy-shard-0 [primary] blog> db.posts.delete({name: "Jill"});
+TypeError: db.posts.delete is not a function
+Atlas atlas-62ghdy-shard-0 [primary] blog> db.posts.deleteOne({name: "Jill"});
+{ acknowledged: true, deletedCount: 1 }
+Atlas atlas-62ghdy-shard-0 [primary] blog> db.posts.updateOne({name: "Jim"}, {$set: {name: "Jim Smith", date: "3/22/2022"}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-62ghdy-shard-0 [primary] blog> db.posts.find().pretty()
+[
+  {
+    _id: ObjectId("623a8331023d9b7465f92220"),
+    name: 'Jame',
+    title: 'my second blog',
+    content: 'Hope you enjoy the content in this second blog.'
+  },
+  {
+    _id: ObjectId("623a8331023d9b7465f92221"),
+    name: 'Jim Smith',
+    title: 'my third post',
+    content: 'This third blog is written by Jim. Enjoy the content.',
+    date: '3/22/2022'
+  }
+]
+Atlas atlas-62ghdy-shard-0 [primary] blog>                                                        
+
